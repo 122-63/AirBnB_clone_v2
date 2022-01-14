@@ -5,6 +5,7 @@ generates a .tgz archive from the contents of the web_static
 from fabric.api import *
 from datetime import datetime
 
+
 def do_pack():
     """
     must return the archive path if the archive has been correctly
@@ -18,4 +19,3 @@ def do_pack():
         return rout
     except Exception:
         return None
-
