@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 """
-distributes an archive to your web servers
+deploying
 """
-from fabric.operations import rum, put, env
+from fabric.api import put, run, env
 from os.path import exists
 
 env.hosts = ['35.243.241.97', '54.90.247.79']
