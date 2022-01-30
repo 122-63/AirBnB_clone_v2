@@ -15,5 +15,15 @@ class State(BaseModel, Base):
         name = Column(String(128), nullable=False)
         cities = relationship('City')
     else:
-        name = ''
-        cities = models.storage.all(City)
+        class State(BaseModel):
+            """ define class"""
+            name = ''
+
+            @property
+            def cities(self):
+                cities_list = []
+                cities = models.storage.all(city).values()
+                for city in cities:
+                    if city.state_id == self.id:
+                        cities_list.append(city)
+                return cities_list
