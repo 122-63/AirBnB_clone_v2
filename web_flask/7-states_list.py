@@ -11,13 +11,13 @@ app.url_map.strict_slashes = False
 
 @app.teardown_appcontext
 def teardown(self):
-    """close session"""
+    """close the  session"""
     storage.close()
 
 
 @app.route('/states_list')
 def states():
-    """states"""
+    """states the list"""
     states = storage.all(State).values()
     return render_template('7-states_list.html', states=states)
 
