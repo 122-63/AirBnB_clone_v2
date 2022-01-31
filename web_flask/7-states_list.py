@@ -1,12 +1,12 @@
 #!/usr/bin/python3
 """List of states"""
 
-from flask import Flask, escape, render_template
+from flask import Flask, render_template
 from models import storage
 from models.state import State
 
 app = Flask(__name__)
-app.url_map.strict_slashes=False
+app.url_map.strict_slashes = False
 
 states = storage.all(State).values()
 
